@@ -130,6 +130,15 @@ html.theme-light .force-theme.theme-light {
   --syntax-green:#56b6c2;
 }
 
+@keyframes modal {
+  0% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /*Palette Previewer*/
 
 a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
@@ -201,6 +210,8 @@ a:hover {
   display:flex;
   align-items:center;
   padding:0 var(--spacing);
+  z-index:3001;
+  -webkit-app-region:drag;
 }
 
 #app-mount .base {
@@ -302,7 +313,7 @@ a:hover {
 }
 
 #app-mount .chat .avatar {
-    transition:150ms ease;
+    transition:150ms ease border-color;
 }
 
 #app-mount .chat .avatar:hover {
@@ -337,7 +348,7 @@ a:hover {
     line-height: normal;
     top: var(--spacing-third);
     user-select:text;
-    cursor:default;
+    cursor:default; 
 }
 
 .message .markup {
@@ -582,4 +593,66 @@ a:hover {
     outline:none;
     border: 1px solid var(--accent-solid);
     box-shadow: 0 0 0 2px rgba(var(--accent), 0.25);
+}
+
+#layer-container {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:3001;
+    display:flex;
+    align-items:center;
+}
+
+#layer-container .backdrop {
+    background:var(--backdrop);
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+#layer-container .modal {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--elevation-2);
+    border: 1px solid var(--base-border);
+    animation: modal 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 400px;
+    max-width: 600px;
+    max-height: 88vh;
+    padding:0;
+}
+
+.modal .modal-header {
+    width:100%;
+    height:50px;
+    padding:var(--spacing-double);
+    color:var(--text-normal);
+    font-size:var(--font-size-md);
+    font-weight:var(--font-weight-semibold);
+    border-bottom:1px solid var(--base-border);
+    display:flex;
+    align-items:center;
+}
+
+.modal .modal-footer {
+    background: var(--background);
+    box-shadow: none;
+    border-top: 1px solid var(--base-border);
+    padding: var(--spacing-double);
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+}
+
+.modal .modal-content {
+    padding:var(--spacing-double);
+    width:100%;
 }
