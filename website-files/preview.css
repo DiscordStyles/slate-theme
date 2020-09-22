@@ -337,6 +337,7 @@ a:hover {
     line-height: normal;
     top: var(--spacing-third);
     user-select:text;
+    cursor:default;
 }
 
 .message .markup {
