@@ -5,9 +5,9 @@
     <title>Slate</title>
     <meta name="description" content="An optimized, consistent, and functional theme for Discord based on GitHub's design language.">
     <meta name="author" content="Slate">
-    <link rel="stylesheet" href="website-files/normalize.css">
-    <link rel="stylesheet" href="website-files/styles.css?v=1.0">
-    <script defer src="website-files/scripts.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <script defer src="js/index.js"></script>
   </head>
 
   <body class="theme-dark">
@@ -16,8 +16,8 @@
       <nav>
         <a href="./index.html">Home</a>
         <a href="./palettes.html">Palettes</a>
-        <a href="https://discord.gg/TeRQEPb">Discord</a>
-        <a href="http://github.com/discordstyles/slate/wiki/">Docs</a>
+        <a href="https://discord.gg/TeRQEPb" target="_blank">Discord</a>
+        <a href="http://github.com/discordstyles/slate/wiki/" target="_blank">Docs</a>
         <div id="theme-switcher">
           <button id="theme">
             <svg class="light-enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" fill="currentColor" d="M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z"></path></svg>
@@ -26,9 +26,9 @@
         </div>
       </nav>
     </header>
-    <div id="scroller">
+    <main id="scroller">
       <div class="background-container">
-        <div id="container" class="first">
+        <div id="main" class="container">
           <section class="section main fadeIn">
             <h1 class="title">Slate</h1>
             <p class="description">An <span style="color: var(--syntax-green)">optimized</span>, <span style="color: var(--syntax-orange)">consistent</span>, and <span style="color: var(--syntax-blue)">functional</span> theme for Discord based on GitHub's design language.</p>
@@ -54,11 +54,11 @@
             </div>
           </section>
         </div>
-        <div id="container" class="second">
+        <div id="features-container" class="container">
           <h2>What is Slate?</h2>
           <section id="feature-showcase">
             <div id="feature-view">
-              <div id="feature">
+              <div class="feature">
                 <div id="palette-preview" class="feature-img">
                   <div class="palette-color palette-color-1"></div>
                   <div class="palette-color palette-color-2"></div>
@@ -67,10 +67,10 @@
                 </div>
                 <div class="feature-content">
                   <h3 class="feature-title">Customizable</h3>
-                  <p class="feature-description">Slate is one of the most customizable themes out there. You can edit almost anything about the appearance from fonts to backgrounds. We also offer pre-made Palettes.</p>
+                  <p class="feature-description">Slate is one of the most customizable themes out there. You can edit almost anything about the appearance from fonts to backgrounds. We also offer pre-made <a href="./palettes.html">Palettes</a>.</p>
                 </div>
               </div>
-              <div id="feature">
+              <div class="feature">
                 <div id="controls-preview" class="feature-img">
                   <div class="control-preview-column">
                     <h2>Aa</h2>
@@ -81,8 +81,8 @@
                     <button class="button secondary dummy">Test2</button>
                   </div>
                   <div class="control-preview-column">
-                    <input type="checkbox" class="dummy"></input>
-                    <input type="text" placeholder="Lorem Ipsum" class="dummy"></input>
+                    <input type="checkbox" class="dummy">
+                    <input type="text" placeholder="Lorem Ipsum" class="dummy">
                   </div>
                 </div>
                 <div class="feature-content">
@@ -90,7 +90,7 @@
                   <p class="feature-description">Slate's current compiled base file is over 12,000 lines long, and touches almost every part of the app. It's design is completely consistent from the colors to font scaling.</p>
                 </div>
               </div>
-              <div id="feature">
+              <div class="feature">
                 <div class="feature-img" id="optimized">
                   <svg fill="currentColor" aria-hidden="true" class="octicon" height="64" role="img" viewBox="0 0 16 16" width="64" style="display:inline-block;fill:currentColor;user-select:none;vertical-align:middle"><path fill-rule="evenodd" d="M9 5H8V4h1v1zm4 3h-1v1h1V8zM6 5H5v1h1V5zM5 8H4v1h1V8zm11-5.5l-.5-.5L9 7c-.06-.02-1 0-1 0-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-.92l6-5.58zm-1.59 4.09c.19.61.3 1.25.3 1.91 0 3.42-2.78 6.2-6.2 6.2-3.42 0-6.21-2.78-6.21-6.2 0-3.42 2.78-6.2 6.2-6.2 1.2 0 2.31.34 3.27.94l.94-.94A7.459 7.459 0 0 0 8.51 1C4.36 1 1 4.36 1 8.5 1 12.64 4.36 16 8.5 16c4.14 0 7.5-3.36 7.5-7.5 0-1.03-.2-2.02-.59-2.91l-1 1z"></path></svg>
                 </div>
@@ -99,7 +99,7 @@
                   <p class="feature-description">Animations on Slate are almost non-existent, and are very minimal when utilized. Slate avoids the use of properties such as translate() to position elements and global selectors when possible.</p>
                 </div>
               </div>
-              <div id="feature">
+              <div class="feature">
                 <div class="feature-img" id="compatible">
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><title>icon-windows</title><g fill="none" fill-rule="evenodd"><path d="M0 0h50v50H0z"/><path d="M50 0L23.46 3.94v19.497H50V0zM0 7.812v15.626h20.313V4.688L0 7.81zM0 43.75l20.313 3.125V26.562H0V43.75zm23.46 3.125L50 50V26.562H23.46v20.313z" fill="currentColor"/></g></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 40 48"><title>icon-ios</title><g fill="none" fill-rule="evenodd"><path d="M-4.063 0h50v50h-50z"/><path d="M32.938 25.94c-.056-5.957 4.862-8.816 5.082-8.963-2.764-4.044-7.067-4.594-8.603-4.66-3.667-.367-7.15 2.16-9.005 2.16-1.86 0-4.727-2.103-7.768-2.05-3.997.056-7.674 2.326-9.732 5.903-4.156 7.194-1.068 17.867 2.976 23.71 1.977 2.86 4.33 6.07 7.427 5.957 2.98-.12 4.108-1.93 7.71-1.93 3.604 0 4.616 1.93 7.77 1.866 3.205-.056 5.237-2.912 7.196-5.78 2.27-3.32 3.207-6.526 3.263-6.69-.065-.03-6.25-2.4-6.315-9.524M27.02 8.457c1.634-1.994 2.746-4.762 2.443-7.518-2.362.09-5.23 1.57-6.93 3.564-1.526 1.765-2.858 4.576-2.5 7.28 2.648.202 5.342-1.342 6.986-3.327" fill="currentColor"/></g></svg>
@@ -114,6 +114,6 @@
           </section>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
