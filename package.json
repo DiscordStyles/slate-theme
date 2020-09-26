@@ -7,7 +7,6 @@
     "dev-dynamic": "cross-env BUNDLING=dynamic npm run dev",
     "build": "routify -b && rollup -c && routify export && workbox injectManifest",
     "serve": "spassr --serve-spa --serve-ssr",
-    "export": "routify export",
     "build:docker": "npm run build && ./scripts/docker/docker-build.sh",
     "deploy:vercel": "cd scripts/vercel && npm run deploy",
     "deploy:netlify": "cd scripts/netlify && npm run deploy",
