@@ -231,6 +231,45 @@ textarea {
 ::-webkit-input-placeholder {
   color: var(--text-muted);
 }
+#app-mount {
+  .modal .modal-content,
+  .chat .chat-content {
+    &::-webkit-scrollbar {
+      width: 4px;
+      display: none;
+      background: transparent !important;
+    }
+    &::-webkit-scrollbar-track {
+      margin:0;
+    }
+    &::-webkit-scrollbar-track-piece {
+      background: transparent;
+      border-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-background);
+      border-radius: 0;
+      border-radius: var(--border-radius);
+      border: none;
+      &:hover {
+        background-color: var(--scrollbar-background-hover);
+      }
+      &:active {
+        background-color: var(--scrollbar-background-active);
+      }
+    }
+    &::-webkit-scrollbar-button,
+    &::-webkit-scrollbar-corner {
+      display: none !important;
+    }
+    &:hover {
+      overflow: overlay !important;
+      &::-webkit-scrollbar {
+        display: block;
+      }
+    }
+  }
+}
 a {
   color: var(--text-link);
   text-decoration: none;
@@ -256,7 +295,7 @@ a:hover {
   display: flex;
   align-items: center;
   padding: 0 var(--spacing);
-  z-index: 3001;
+  z-index: 11;
   -webkit-app-region: drag;
 }
 #app-mount .base {
@@ -308,11 +347,15 @@ a:hover {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  overflow:hidden;
+  max-height:calc(100vh - var(--titlebar-height) - var(--toolbar-height));
 }
 #app-mount .base .chat-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow:hidden scroll;
+  height:calc(100vh - var(--titlebar-height) - var(--toolbar-height) - 50px);
 }
 #app-mount .base .chat input {
   border-radius: var(--border-radius);
@@ -396,6 +439,7 @@ a:hover {
   border-top: 1px solid var(--base-border);
   display: flex;
   align-items: center;
+  flex-shrink:0;
   padding: 0 var(--spacing);
 }
 #app-mount .base .channels-panel .panel-controls {
@@ -528,6 +572,8 @@ a:hover {
   border-bottom: 1px solid var(--toolbar-border);
   display: flex;
   align-items: center;
+  justify-content:flex-start;
+  padding:0;
 }
 #toolbar .channel-header {
   width: calc(54px + var(--sidebar-width));
@@ -565,10 +611,15 @@ a:hover {
 }
 #toolbar #toolbar-segment h1.name:before {
   display: block;
-  content: "Current Server";
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-normal);
   color: var(--toolbar-text-muted);
+}
+#toolbar #toolbar-segment.channel-header h1.name:before {
+  content: "Current Server";
+}
+#toolbar #toolbar-segment.chat-header h1.name:before {
+  content: "Current Channel";
 }
 #toolbar .search-bar {
   -webkit-appearance: none;
@@ -600,6 +651,7 @@ a:hover {
   z-index: 3001;
   display: flex;
   align-items: center;
+  pointer-events:none;
 }
 #layer-container .modal {
   position: relative;
@@ -607,11 +659,11 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  pointer-events:all;
   background-color: var(--background);
   border-radius: var(--border-radius);
-  box-shadow: var(--elevation-2);
+  box-shadow: var(--elevation-1);
   border: 1px solid var(--base-border);
-  animation: modal 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   min-width: 400px;
   max-width: 600px;
   max-height: 88vh;
@@ -629,6 +681,7 @@ a:hover {
   display: flex;
   align-items: center;
   touch-action: none;
+  background:transparent;
 }
 .modal .modal-footer {
   background: var(--background);
@@ -643,4 +696,33 @@ a:hover {
 .modal .modal-content {
   padding: var(--spacing-double);
   width: 100%;
+  max-height:400px;
+  overflow:auto;
+}
+.palette-container .palette-preview {
+  width:100%;
+  height:50px;
+  min-height:50px;
+}
+.palette-container {
+  padding:var(--spacing);
+  background:var(--background-alt);
+  border-radius:var(--border-radius);
+  border:1px solid var(--base-border);
+  margin-bottom:var(--spacing);
+  &:last-child {
+    margin:0;
+  }
+}
+.palette-container.active {
+  border: 1px solid var(--accent-solid);
+  box-shadow: 0 0 0 3px rgba(var(--accent), 0.25);
+}
+.palette-info .palette-title  {
+  display:block;
+  position:relative;
+  margin-bottom:var(--spacing);
+  font-size:var(--font-size-md);
+  font-weight:var(--font-weight-semibold);
+  color:var(--text-normal);
 }

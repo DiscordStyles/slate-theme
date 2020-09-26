@@ -36,12 +36,22 @@
   }
 
   // Import palettes
-  import twitchcord from "@/palettes/twitchcord";
+  import arc from "@/palettes/arc";
+  import gruvbox from "@/palettes/gruvbox";
   import dracula from "@/palettes/dracula";
+  import nord from "@/palettes/nord";
+  import solarized from "@/palettes/solarized";
+  import twitchcord from "@/palettes/twitchcord";
+  import yaru from "@/palettes/yaru";
 
   const palettes = {
-    twitchcord,
+    arc,
+    gruvbox,
     dracula,
+    nord,
+    solarized,
+    twitchcord,
+    yaru
   };
 
   let current = "";
@@ -49,6 +59,10 @@
   function setPalette(theme) {
     current = theme;
     document.querySelector("#palette").textContent = palettes[theme].replace(/```/g, "").replace("css\n", "");
+  }
+  function removePalette(theme) {
+    current = theme;
+    document.querySelector("#palette").textContent = palettes[theme].replace(/```/g, "").replace(/```/g, "");
   }
 </script>
 
@@ -61,30 +75,95 @@
     <dialog class="modal" bind:this={modal}>
       <header class="modal-header">Available Palettes</header>
       <section class="modal-content">
-        <div class="palette-container" on:click={() => setPalette('twitchcord')}>
-          <div class="palette-preview">
-            <div class="palette-color" style="background: rgb(75, 54, 124)" />
-            <div class="palette-color" style="background: #c0c0c0" />
-            <div class="palette-color" style="background: #0f0e11" />
-            <div class="palette-color" style="background: #19171c" />
-          </div>
+        <div class="palette-container" class:active={current == ''} on:click={() => setPalette('')}>
           <div class="palette-info">
-            <h3 class="palette-title">Twitchcord</h3>
+            <h3 class="palette-title">Primer (Default)</h3>
+          </div>  
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(3, 102, 214)" />
+            <div class="palette-color" style="background: #d1d5da" />
+            <div class="palette-color" style="background: #1d2125" />
+            <div class="palette-color" style="background: #24292e" />
           </div>
         </div>
-        <div class="palette-container" on:click={() => setPalette('dracula')}>
+        <div class="palette-container" class:active={current == 'arc'} on:click={() => setPalette('arc')}>
+          <div class="palette-info">
+            <h3 class="palette-title">Arc-GTK</h3>
+          </div>
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(84, 128, 226)" />
+            <div class="palette-color" style="background: #d3dae3" />
+            <div class="palette-color" style="background: #2c303a" />
+            <div class="palette-color" style="background: #373d48" />
+          </div>
+        </div>
+        <div class="palette-container" class:active={current == 'gruvbox'} on:click={() => setPalette('gruvbox')}>
+          <div class="palette-info">
+            <h3 class="palette-title">Gruvbox</h3>
+          </div>
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(215, 153, 33)" />
+            <div class="palette-color" style="background: #bdae93" />
+            <div class="palette-color" style="background: #282828" />
+            <div class="palette-color" style="background: #3c3836" />
+          </div>
+        </div>
+        <div class="palette-container" class:active={current == 'dracula'} on:click={() => setPalette('dracula')}>
+          <div class="palette-info">
+            <h3 class="palette-title">Dracula</h3>
+          </div>
           <div class="palette-preview">
             <div class="palette-color" style="background: rgb(138, 62, 244)" />
             <div class="palette-color" style="background: #bfc5d9" />
             <div class="palette-color" style="background: #191a21" />
             <div class="palette-color" style="background: #22222c" />
           </div>
+        </div>
+        <div class="palette-container" class:active={current == 'nord'} on:click={() => setPalette('nord')}>
           <div class="palette-info">
-            <h3 class="palette-title">Dracula</h3>
+            <h3 class="palette-title">Nord</h3>
+          </div>
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(143, 188, 187)" />
+            <div class="palette-color" style="background: #d8dee9" />
+            <div class="palette-color" style="background: #2c303a" />
+            <div class="palette-color" style="background: #2e3440" />
+          </div>
+        </div>
+        <div class="palette-container" class:active={current == 'solarized'} on:click={() => setPalette('solarized')}>
+          <div class="palette-info">
+            <h3 class="palette-title">Solarized</h3>
+          </div>
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(42, 161, 152)" />
+            <div class="palette-color" style="background: #c5d0d3"/>
+            <div class="palette-color" style="background: #002129"/>
+            <div class="palette-color" style="background: #002b36"/>
+          </div>
+        </div>
+        <div class="palette-container" class:active={current == 'twitchcord'} on:click={() => setPalette('twitchcord')}>
+          <div class="palette-info">
+            <h3 class="palette-title">Twitchcord</h3>
+          </div>
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(75, 54, 124)" />
+            <div class="palette-color" style="background: #c0c0c0"/>
+            <div class="palette-color" style="background: #0f0e11"/>
+            <div class="palette-color" style="background: #19171c"/>
+          </div>
+        </div>
+        <div class="palette-container" class:active={current == 'yaru'} on:click={() => setPalette('yaru')}>
+          <div class="palette-info">
+            <h3 class="palette-title">Yaru</h3>
+          </div>  
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(233, 84, 32)" />
+            <div class="palette-color" style="background: #F7F7F7"/>
+            <div class="palette-color" style="background: #333333"/>
+            <div class="palette-color" style="background: #3D3D3D"/>
           </div>
         </div>
       </section>
-      <footer class="modal-footer"><button>Select</button></footer>
     </dialog>
   </div>
   <div id="titlebar">Preview</div>

@@ -1,5 +1,5 @@
 export default `\`\`\`css
-/* Twichcord Color Palette */
+/*Twitchcord Palette*/
 :root {
   --toolbar-background-alt:#2c2541;
   --toolbar-background:#4b367c;
