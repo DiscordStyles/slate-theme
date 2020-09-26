@@ -1,0 +1,137 @@
+#app {
+  height: 100%;
+}
+
+@keyframes modal {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contextMenu {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: none;
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-15%);
+    opacity: 0.3;
+  }
+  100% {
+    transform: none;
+    opacity: 0.5;
+  }
+}
+
+/* Global styles */
+* {
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: var(--font-family-sans-serif);
+  background: var(--background);
+}
+.button {
+  cursor: default;
+  text-decoration: none;
+  user-select: none;
+  line-height: normal;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  padding: var(--spacing-half) var(--spacing-double);
+  border-radius: var(--button-border-radius);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.button.primary {
+  background: rgb(var(--accent));
+  color: var(--white);
+  border: 1px solid rgb(var(--accent));
+}
+.button.primary:hover {
+  box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.1);
+}
+.button.primary:focus {
+  box-shadow: 0 0 0 2px rgba(var(--accent), 0.25), inset 0 0 0 100vmax rgba(255, 255, 255, 0.1);
+}
+.button.secondary {
+  background: var(--background-light);
+  border: 1px solid var(--base-border);
+  color: var(--text-normal);
+}
+.button.secondary:hover {
+  border-color: currentColor;
+}
+.button.secondary:focus {
+  border-color: currentColor;
+  box-shadow: 0 0 0 1px currentColor;
+}
+.fadeIn {
+  animation: fadeIn 0.5s ease;
+}
+.palette-preview {
+  display: flex;
+  overflow: hidden;
+  align-items: stretch !important;
+  justify-content: unset;
+  width: 300px;
+  height: 100%;
+  min-height: 100px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--base-border);
+  background: var(--background-alt);
+  flex-shrink: 0;
+  position: relative;
+  transition: 150ms ease;
+  display: flex;
+  justify-content: center;
+}
+.palette-preview .palette-color {
+  flex-grow: 1;
+}
+.palette-preview .palette-color-1 {
+  background: var(--accent-solid);
+}
+.palette-preview .palette-color-2 {
+  background: var(--text-normal);
+}
+.palette-preview .palette-color-3 {
+  background: var(--background-dark);
+}
+.palette-preview .palette-color-4 {
+  background: var(--background);
+}
