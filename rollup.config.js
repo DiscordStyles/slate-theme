@@ -1,6 +1,7 @@
 import * as path from "path";
 import { createRollupConfigs } from "./scripts/base.config.js";
 import alias from "@rollup/plugin-alias";
+import scss from "rollup-plugin-scss";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -13,6 +14,10 @@ export const config = {
   rollupWrapper: (rollup) => {
     rollup.plugins = [
       ...rollup.plugins,
+      scss({
+        watch: "scss",
+        output: "static/css/main.css",
+      }),
       alias({
         entries: [{ find: "@", replacement: path.resolve("src") }],
       }),
