@@ -2,13 +2,12 @@
   import interact from "interactjs";
   import marked from "marked";
   import hljs from "highlight.js";
-  import DOMPurify from "dompurify";
 
   let modal;
 
   marked.setOptions({
     highlight: function (code, lang, _callback) {
-      return DOMPurify.sanitize(hljs.highlightAuto(code).value);
+      return hljs.highlightAuto(code).value;
     },
     breaks: true,
   });
@@ -45,7 +44,12 @@
     dracula,
   };
 
-  let current = "dracula";
+  let current = "";
+
+  function setPalette(theme) {
+    current = theme;
+    document.querySelector("#palette").textContent = palettes[theme].replace(/```/g, "").replace("css\n", "");
+  }
 </script>
 
 <svelte:head>
@@ -57,7 +61,7 @@
     <dialog class="modal" bind:this={modal}>
       <header class="modal-header">Available Palettes</header>
       <section class="modal-content">
-        <div class="palette-container" on:click={(e) => (current = 'twitchcord')}>
+        <div class="palette-container" on:click={() => setPalette('twitchcord')}>
           <div class="palette-preview">
             <div class="palette-color" style="background: rgb(75, 54, 124)" />
             <div class="palette-color" style="background: #c0c0c0" />
@@ -66,6 +70,17 @@
           </div>
           <div class="palette-info">
             <h3 class="palette-title">Twitchcord</h3>
+          </div>
+        </div>
+        <div class="palette-container" on:click={() => setPalette('dracula')}>
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(138, 62, 244)" />
+            <div class="palette-color" style="background: #bfc5d9" />
+            <div class="palette-color" style="background: #191a21" />
+            <div class="palette-color" style="background: #22222c" />
+          </div>
+          <div class="palette-info">
+            <h3 class="palette-title">Dracula</h3>
           </div>
         </div>
       </section>
@@ -145,11 +160,13 @@
     </aside>
     <section class="chat">
       <div class="chat-content container-content">
-        <div class="message">
-          <div>
-            {@html marked(palettes[current])}
+        {#if current != ''}
+          <div class="message">
+            <div>
+              {@html marked(palettes[current])}
+            </div>
           </div>
-        </div>
+        {/if}
         <div class="message">
           <div class="message-controls">
             <div class="message-control react" />

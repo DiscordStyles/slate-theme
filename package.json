@@ -22,7 +22,6 @@
     "concurrently": "^5.2.0",
     "cross-env": "^7.0.2",
     "del": "^5.1.0",
-    "dompurify": "^2.1.1",
     "highlight.js": "^10.2.0",
     "interactjs": "^1.9.22",
     "marked": "^1.1.1",
