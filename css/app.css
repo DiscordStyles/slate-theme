@@ -995,7 +995,6 @@ a:hover {
 #app-mount .base .chat-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   overflow: hidden scroll;
   height: calc(100vh - var(--titlebar-height) - var(--toolbar-height) - 50px);
 }
@@ -1028,6 +1027,7 @@ a:hover {
 .chat .message {
   padding: var(--spacing);
   border-top: 1px solid var(--base-border);
+  margin-top: auto;
   display: flex;
   -webkit-user-select: text;
           user-select: text;
