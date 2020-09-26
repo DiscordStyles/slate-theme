@@ -63,7 +63,7 @@ function baseConfig(config, ctx) {
         ],
         copyOnce: true,
         flatten: false,
-        watch: "static",
+        watch: !production && "static",
       }),
       svelte(svelteConfig),
 
