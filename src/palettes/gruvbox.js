@@ -1,6 +1,6 @@
 export default `\`\`\`css
 /*Gruvbox Palette*/
-:root {
+html:root {
     --toolbar-background-alt:#3c3836;
     --toolbar-background:#32302f;
     --toolbar-background-hover:#3c3836;
@@ -18,8 +18,9 @@ export default `\`\`\`css
     --status-grey:168, 153, 132;
 }
 
-.theme-dark,
-html.theme-dark #app-mount .theme-light .root-1gCeng {
+html.theme-dark,
+html.theme-dark body #app-mount .theme-light .root-1gCeng,
+html.theme-dark body .force-theme.theme-light {
     --background-modifier-hover:#232127;
     --background-modifier-active:#2d2a32;
     --text-normal:#ebdbb2;

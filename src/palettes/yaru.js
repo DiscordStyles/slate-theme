@@ -1,6 +1,6 @@
 export default `\`\`\`css
 /*Yaru Palette*/
-:root {
+html:root {
     --toolbar-background-alt:var(--toolbar-background);
     --toolbar-background:#2b2929;
     --toolbar-background-hover:#343232;
@@ -13,8 +13,9 @@ export default `\`\`\`css
     --accent:233, 84, 32;
 }
 
-.theme-dark,
-html.theme-dark #app-mount .theme-light .root-1gCeng {
+html.theme-dark,
+html.theme-dark body #app-mount .theme-light .root-1gCeng,
+html.theme-dark body .force-theme.theme-light {
     --text-normal:#F7F7F7;
     --text-muted:#878787;
     --background-alt:#353535;
@@ -26,8 +27,9 @@ html.theme-dark #app-mount .theme-light .root-1gCeng {
     --background-modifier-active:#5D5D5D;
 }
 
-.theme-light,
-html.theme-light #app-mount .theme-light .root-1gCeng {
+html.theme-light,
+html.theme-light body #app-mount .theme-light .root-1gCeng,
+html.theme-light body .force-theme.theme-light {
     --text-normal:#000000;
     --text-muted:#333333;
     --background-alt:#f5f6f7;

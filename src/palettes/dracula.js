@@ -1,6 +1,6 @@
 export default `\`\`\`css
 /* Dracula palette */
-:root {
+html:root {
   --toolbar-background-alt:#191a21;
   --toolbar-background:#282a36;
   --toolbar-background-hover:#343746;
@@ -12,8 +12,9 @@ export default `\`\`\`css
   --accent:138, 62, 244;
 }
 
-.theme-dark,
-html.theme-dark #app-mount .theme-light .root-1gCeng {
+html.theme-dark,
+html.theme-dark body #app-mount .theme-light .root-1gCeng,
+html.theme-dark body .force-theme.theme-light {
   --background-alt:var(--background-light);
   --background-light:#282a36;
   --background-dark:#191a21;

@@ -22,6 +22,11 @@
       btn.classList.remove("dropdown-visible");
     }
   }
+  function addDefaultTheme() {
+    document.documentElement.classList.add("theme-dark");
+  }
+    
+  window.onload = addDefaultTheme()
 </script>
 
 <svelte:body on:click={dropdownHandler} />

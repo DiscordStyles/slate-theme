@@ -1,6 +1,6 @@
 export default `\`\`\`css
 /*Twitchcord Palette*/
-:root {
+html:root {
   --toolbar-background-alt:#2c2541;
   --toolbar-background:#4b367c;
   --toolbar-background-hover:#523b87;
@@ -14,8 +14,9 @@ export default `\`\`\`css
   --font-family-sans-serif:'Arial', 'Helvetica Neue', sans-serif;
 }
 
-.theme-dark,
-html.theme-dark #app-mount .theme-light .root-1gCeng {
+html.theme-dark,
+html.theme-dark body #app-mount .theme-light .root-1gCeng,
+html.theme-dark body .force-theme.theme-light {
   --background-modifier-hover:#232127;
   --background-modifier-active:#2d2a32;
   --text-normal:#c0c0c0;

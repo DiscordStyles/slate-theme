@@ -1,6 +1,6 @@
 export default `\`\`\`css
 /*Nord Palette*/
-:root {
+html:root {
     --toolbar-background-alt:#2e3440;
     --toolbar-background:#353c4a;
     --toolbar-background-hover:#3b4252;
@@ -16,8 +16,9 @@ export default `\`\`\`css
     --status-yellow:163, 190, 140
 }
 
-.theme-dark,
-html.theme-dark #app-mount .theme-light .root-1gCeng {
+html.theme-dark,
+html.theme-dark body #app-mount .theme-light .root-1gCeng,
+html.theme-dark body .force-theme.theme-light {
     --background-modifier-hover:#3b4252;
     --background-modifier-active:#434c5e;
     --text-normal:#d8dee9;
@@ -32,8 +33,9 @@ html.theme-dark #app-mount .theme-light .root-1gCeng {
     --background-modifier-active:#434c5e;
 }
 
-.theme-light,
-html.theme-light #app-mount .theme-light .root-1gCeng {
+html.theme-light,
+html.theme-light body #app-mount .theme-light .root-1gCeng,
+html.theme-light body .force-theme.theme-light {
     --background-alt:#eceff4;
     --background-light:#d8dee9;
     --background-dark:#cbd3e1;

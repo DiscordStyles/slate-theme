@@ -35,6 +35,17 @@
     modal.setAttribute("data-y", y);
   }
 
+  function changeTheme() {
+    document.documentElement.classList.toggle("theme-light");
+    document.documentElement.classList.toggle("theme-dark");
+  }
+
+  function addDefaultTheme() {
+    document.documentElement.classList.add("theme-dark");
+  }
+    
+  window.onload = addDefaultTheme()
+
   // Import palettes
   import arc from "@/palettes/arc";
   import gruvbox from "@/palettes/gruvbox";
@@ -69,11 +80,24 @@
 <svelte:head>
   <link rel="stylesheet" type="text/css" href="/css/palettes.css" />
 </svelte:head>
-
 <div id="app-mount">
   <div id="layer-container">
     <dialog class="modal" bind:this={modal}>
-      <header class="modal-header">Available Palettes</header>
+      <header class="modal-header">
+      Available Palettes
+      <div id="theme-switcher">
+        <button id="theme" on:click={changeTheme}>
+          <svg class="light-enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path
+              fill-rule="evenodd"
+              fill="currentColor"
+              d="M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z" /></svg>
+          <svg class="dark-enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path
+              fill-rule="evenodd"
+              fill="currentColor"
+              d="M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z" /></svg>
+        </button>
+      </div>
+      </header>
       <section class="modal-content">
         <div class="palette-container" class:active={current == ''} on:click={() => setPalette('')}>
           <div class="palette-info">
@@ -241,19 +265,17 @@
       <div class="chat-content container-content">
         {#if current != ''}
           <div class="message">
-            <div>
+            <div class="avatar-column">
+              <div class="avatar"/></div>
+            <div class="content-column">
+              <h2 class="message-header"><span class="username">Slate Previewer</span> <span class="timestamp-cozy">Today at 9:42 PM</span></h2>
               {@html marked(palettes[current])}
             </div>
           </div>
         {/if}
         <div class="message">
-          <div class="message-controls">
-            <div class="message-control react" />
-            <div class="message-control more" />
-          </div>
           <div class="avatar-column">
-            <div class="avatar" />
-          </div>
+            <div class="avatar"/></div>
           <div class="content-column">
             <h2 class="message-header"><span class="username">Member 1</span> <span class="timestamp-cozy">Today at 9:42 PM</span></h2>
             <div class="markup">Hello! This is a static mockup of discord designed to test palettes with Slate. You can view more documetation about palettes here: <a href="https://github.com/DiscordStyles/Slate/wiki">https://github.com/DiscordStyles/Slate/wiki</a></div>

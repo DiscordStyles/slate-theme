@@ -1,6 +1,6 @@
 export default `\`\`\`css
 /*Arc Palette*/
-:root {
+html:root {
     --toolbar-background-alt:var(--toolbar-background);
     --toolbar-background:#313742;
     --toolbar-background-hover:#404552;
@@ -13,8 +13,9 @@ export default `\`\`\`css
     --accent:84, 128, 226;
 }
 
-.theme-dark,
-html.theme-dark #app-mount .theme-light .root-1gCeng {
+html.theme-dark,
+html.theme-dark body #app-mount .theme-light .root-1gCeng,
+html.theme-dark body .force-theme.theme-light {
     --text-normal:#d3dae3;
     --text-muted:#9eaabd;
     --background-alt:#404552;
@@ -26,8 +27,9 @@ html.theme-dark #app-mount .theme-light .root-1gCeng {
     --background-modifier-active:#484c5b;
 }
 
-.theme-light,
-html.theme-light #app-mount .theme-light .root-1gCeng {
+html.theme-light,
+html.theme-light body #app-mount .theme-light .root-1gCeng,
+html.theme-light body .force-theme.theme-light {
     --text-normal:#5c616c;
     --text-muted:#6a6f7c;
 }

@@ -1,6 +1,6 @@
 export default `\`\`\`css
 /*Solarized Palette*/
-:root {
+html:root {
     --toolbar-background-alt:#05262e;
     --toolbar-background:#002b36;
     --toolbar-background-hover:#073642;
@@ -13,8 +13,9 @@ export default `\`\`\`css
     --accent:42, 161, 152;
 }
 
-.theme-dark,
-html.theme-dark #app-mount .theme-light .root-1gCeng  {
+html.theme-dark,
+html.theme-dark body #app-mount .theme-light .root-1gCeng,
+html.theme-dark body .force-theme.theme-light {
     --background-modifier-hover:rgba(255,255,255,0.1);
     --background-modifier-active:rgba(255,255,255,0.2);
     --text-normal:#a8b8bd;
@@ -27,8 +28,9 @@ html.theme-dark #app-mount .theme-light .root-1gCeng  {
     --base-border:#03171c;
 }
 
-.theme-light,
-html.theme-light #app-mount .theme-light .root-1gCeng  {
+html.theme-light,
+html.theme-light body #app-mount .theme-light .root-1gCeng,
+html.theme-light body .force-theme.theme-light {
     --background-modifier-hover:rgba(0,0,0,0.05);
     --background-modifier-active:rgba(0,0,0,0.1);
     --text-focus:#073642;
