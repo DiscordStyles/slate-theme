@@ -3,8 +3,8 @@
   let btn;
 
   function changeTheme() {
-    document.body.classList.toggle("theme-light");
-    document.body.classList.toggle("theme-dark");
+    document.documentElement.classList.toggle("theme-light");
+    document.documentElement.classList.toggle("theme-dark");
   }
 
   function openDropdown() {
@@ -22,17 +22,10 @@
       btn.classList.remove("dropdown-visible");
     }
   }
-  function addDefaultTheme() {
-    document.documentElement.classList.add("theme-dark");
-  }
-    
-  window.onload = addDefaultTheme()
 </script>
 
 <svelte:body on:click={dropdownHandler} />
-<svelte:head>
-  <link rel="stylesheet" type="text/css" href="/css/home.css" />
-</svelte:head>
+
 <div class="home">
   <header>
     <h2 class="header-title">Slate</h2>
