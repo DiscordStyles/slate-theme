@@ -263,16 +263,6 @@
     </aside>
     <section class="chat">
       <div class="chat-content container-content">
-        {#if current != ''}
-          <div class="message">
-            <div class="avatar-column">
-              <div class="avatar"/></div>
-            <div class="content-column">
-              <h2 class="message-header"><span class="username">Slate Previewer</span> <span class="timestamp-cozy">Today at 9:42 PM</span></h2>
-              {@html marked(palettes[current])}
-            </div>
-          </div>
-        {/if}
         <div class="message">
           <div class="avatar-column">
             <div class="avatar"/></div>
@@ -281,6 +271,17 @@
             <div class="markup">Hello! This is a static mockup of discord designed to test palettes with Slate. You can view more documetation about palettes here: <a href="https://github.com/DiscordStyles/Slate/wiki">https://github.com/DiscordStyles/Slate/wiki</a></div>
           </div>
         </div>
+        {#if current != ''}
+          <div class="message">
+            <div class="avatar-column">
+              <div class="avatar"/></div>
+            <div class="content-column">
+              <h2 class="message-header"><span class="username">Slate Previewer</span> <span class="timestamp-cozy">Today at 9:42 PM</span></h2>
+              <div class="markup">Here's your palette! Paste the code below into your Custom CSS or Quick CSS to apply it. If you need help, you can join the <a class="anchor" href="https://discord.gg/TeRQEPb">Black Box</a> discord server.</div>
+              {@html marked(palettes[current])}
+            </div>
+          </div>
+        {/if}
       </div>
       <div class="chat-textarea">
         <div class="avatar" />
