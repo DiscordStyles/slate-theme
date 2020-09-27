@@ -16,7 +16,7 @@ export const config = {
       ...rollup.plugins,
       scss({
         watch: "scss",
-        output: "static/css/main.css",
+        output: "static/css/app.css",
       }),
       alias({
         entries: [{ find: "@", replacement: path.resolve("src") }],
