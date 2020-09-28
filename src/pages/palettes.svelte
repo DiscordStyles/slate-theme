@@ -49,6 +49,7 @@
   import solarized from "@/palettes/solarized";
   import twitchcord from "@/palettes/twitchcord";
   import yaru from "@/palettes/yaru";
+  import monokai from "@/palettes/monokai";
 
   const palettes = {
     arc,
@@ -58,6 +59,7 @@
     solarized,
     twitchcord,
     yaru,
+    monokai,
   };
 
   let current = "";
@@ -177,6 +179,17 @@
             <div class="palette-color" style="background: #F7F7F7" />
             <div class="palette-color" style="background: #333333" />
             <div class="palette-color" style="background: #3D3D3D" />
+          </div>
+        </div>
+        <div class="palette-container" class:active={current == 'monokai'} on:click={() => setPalette('monokai')}>
+          <div class="palette-info">
+            <h3 class="palette-title">Monokai Pro</h3>
+          </div>
+          <div class="palette-preview">
+            <div class="palette-color" style="background: rgb(204, 153, 0)" />
+            <div class="palette-color" style="background: #c1c0c0" />
+            <div class="palette-color" style="background: #19181a" />
+            <div class="palette-color" style="background: #221f22" />
           </div>
         </div>
       </section>
