@@ -24,7 +24,7 @@ html.theme-dark body .force-theme.theme-light {
   --text-muted:#939293;
   --guilds-background:var(--background-dark);
   --background-modifier-hover:#2a272a;
-  --background-modifier-active:#2d2a2d;
+  --background-modifier-active:#353135;
   --syntax-blue:#a9dc76;
   --syntax-orange:#fc9867;
   --syntax-purple:#ab9df2;
