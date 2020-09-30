@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /*Gruvbox Palette*/
 html:root {
+    --slate-palette: "Gruvbox";
     --toolbar-background-alt:#3c3836;
     --toolbar-background:#32302f;
     --toolbar-background-hover:#3c3836;

@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /*Yaru Palette*/
 html:root {
+    --slate-palette: "Yaru";
     --toolbar-background-alt:var(--toolbar-background);
     --toolbar-background:#2b2929;
     --toolbar-background-hover:#343232;

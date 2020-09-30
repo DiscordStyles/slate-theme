@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /* Dracula palette */
 html:root {
+  --slate-palette: "Dracula";
   --toolbar-background-alt:#191a21;
   --toolbar-background:#282a36;
   --toolbar-background-hover:#343746;

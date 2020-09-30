@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /* Monokai-Pro palette */
 html:root {
+  --slate-palette: "Monokai Pro";
   --toolbar-background-alt:#221f22;
   --toolbar-background:#272428;
   --toolbar-background-hover:#393639;

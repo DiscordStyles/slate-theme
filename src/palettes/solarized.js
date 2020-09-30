@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /*Solarized Palette*/
 html:root {
+    --slate-palette: "Solarized";
     --toolbar-background-alt:#05262e;
     --toolbar-background:#002b36;
     --toolbar-background-hover:#073642;

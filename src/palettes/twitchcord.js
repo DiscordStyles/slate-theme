@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /*Twitchcord Palette*/
 html:root {
+  --slate-palette: "Twitchcord";
   --toolbar-background-alt:#2c2541;
   --toolbar-background:#4b367c;
   --toolbar-background-hover:#523b87;

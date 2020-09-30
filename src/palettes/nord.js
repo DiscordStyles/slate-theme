@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /*Nord Palette*/
 html:root {
+    --slate-palette: "Nordic";
     --toolbar-background-alt:#2e3440;
     --toolbar-background:#353c4a;
     --toolbar-background-hover:#3b4252;

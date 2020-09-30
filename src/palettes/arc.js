@@ -1,6 +1,7 @@
 export default `\`\`\`css
 /*Arc Palette*/
 html:root {
+    --slate-palette: "Arc";
     --toolbar-background-alt:var(--toolbar-background);
     --toolbar-background:#313742;
     --toolbar-background-hover:#404552;
