@@ -33,7 +33,7 @@
       <a href="/">Home</a>
       <a href="/palettes">Palettes</a>
       <a href="https://discord.gg/TeRQEPb" target="_blank">Discord</a>
-      <a href="http://github.com/discordstyles/slate/wiki/" target="_blank">Docs</a>
+      <a href="https://github.com/discordstyles/slate/wiki/" target="_blank">Docs</a>
       <div id="theme-switcher">
         <button id="theme" on:click={changeTheme}>
           <svg class="light-enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path
@@ -70,7 +70,7 @@
           </div>
         </section>
         <section class="section">
-          <div class="preview" on:click={viewPreview}><img class="preview-img dark-enabled" src="https://i.imgur.com/GEcQZhN.png" alt="Light theme preview" /> <img class="preview-img light-enabled" src="https://i.imgur.com/b8O0gps.png" alt="Dark theme preview" /></div>
+          <div class="preview" on:click={viewPreview}><img class="preview-img dark-enabled" src="https://i.imgur.com/Dpkar2i.png" alt="Light theme preview" /> <img class="preview-img light-enabled" src="https://i.imgur.com/48zJ06n.png" alt="Dark theme preview" /></div>
         </section>
       </div>
       <div id="features-container" class="container">
@@ -86,7 +86,7 @@
               </div>
               <div class="feature-content">
                 <h3 class="feature-title">Customizable</h3>
-                <p class="feature-description">Slate is one of the most customizable themes out there. You can edit almost anything about the appearance from fonts to backgrounds. We also offer pre-made <a href="./preview.html">Palettes</a>.</p>
+                <p class="feature-description">Slate is one of the most customizable themes out there. You can edit almost anything about the appearance from fonts to backgrounds. We also offer pre-made <a href="./palettes.html">Palettes</a>.</p>
               </div>
             </div>
             <div class="feature">
