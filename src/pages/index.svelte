@@ -70,7 +70,7 @@
           </div>
         </section>
         <section class="section">
-          <div class="preview" on:click={viewPreview}><img class="preview-img dark-enabled" src="https://i.imgur.com/Dpkar2i.png" alt="Light theme preview" /> <img class="preview-img light-enabled" src="https://i.imgur.com/48zJ06n.png" alt="Dark theme preview" /></div>
+          <div class="preview" on:click={viewPreview}><img class="preview-img dark-enabled" src="https://i.imgur.com/48zJ06n.png" alt="Dark theme preview" /> <img class="preview-img light-enabled" src="https://i.imgur.com/Dpkar2i.png" alt="Light theme preview" /></div>
         </section>
       </div>
       <div id="features-container" class="container">
